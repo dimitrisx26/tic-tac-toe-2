@@ -1,5 +1,3 @@
-const blocks = document.querySelectorAll(".block");
-
 const Player = (name, option) => {
     playerName = name;
     playerOption = option;
@@ -11,11 +9,7 @@ const player1 = Player("dimitris", "X");
 const player2 = Player("marlena", "O");
 
 const gameBoard = (() => {
-    const boxesArray = [
-        "","","",
-        "","","",
-        "","",""
-    ];
+    const boxesArray = document.querySelectorAll(".block");
 
     return {boxesArray};
 })();
@@ -25,14 +19,14 @@ const displayController = (() => {
 
     function round ( ) {
         for (let i = 0; i < gameBoard.boxesArray.length; i++) {
-            blocks[i].addEventListener("click", function () {
-                if (gameBoard.boxesArray[i] == "") {
+            gameBoard.boxesArray[i].addEventListener("click", function () {
+                if (gameBoard.boxesArray[i].textContent === "") {
                     if (!playerTurn) {
-                        blocks[i].textContent = player1.playerOption;
+                        gameBoard.boxesArray[i].textContent = player1.playerOption;
                     } else {
-                        blocks[i].textContent = player2.playerOption;
+                        gameBoard.boxesArray[i].textContent = player2.playerOption;
                     }
-                    blocks[i].classList.add("selected");
+                    gameBoard.boxesArray[i].classList.add("selected");
                 }
                 swapTurns();
             })
