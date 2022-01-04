@@ -1,2 +1,2 @@
-# tic-tac-toe-2
-Tic-Tac-Toe webgame.
+# Tic-Tac-Toe
+Tic Tac Toe game you can play in your browser!
