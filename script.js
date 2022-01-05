@@ -6,9 +6,21 @@ const Player = (name) => {
     return { playerName };
 };
 
+let player1 = Player("Player 1");
+let player2 = Player("Player 2");
 
-const player1 = Player("Player 1");
-const player2 = Player("Player 2");
+startBtn.addEventListener("click", () => {
+    document.getElementById("modal").style.display = "none";
+    const name1 = document.getElementById("player1").value;
+    if (name1 !== "") {
+        player1 = Player(name1);
+        gameBoard.announcement.textContent = `${player1.playerName}'s turn`;
+    }
+    const name2 = document.getElementById("player2").value;
+    if (name2 !== "") {
+        player2 = Player(name2);
+    }
+})
 
 const gameBoard = (() => {
     
@@ -38,10 +50,8 @@ const game = (() => {
     let turn;
     let playerTurn;
     gameBoard.announcement.textContent = `${player1.playerName}'s turn`;
-
+    
     (function round() {
-        
-
         for (let i = 0; i < gameBoard.nodesArray.length; i++) {
             gameBoard.nodesArray[i].addEventListener("click", function () {
                 gameBoard.announcement.textContent = turn ? `${player1.playerName}'s turn` : `${player2.playerName}'s turn`;
