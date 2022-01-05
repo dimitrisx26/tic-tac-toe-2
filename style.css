@@ -1,10 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300&display=swap');
+
 html,
 body{
     height: 100%;
 }
 
 body{
-    font-family: Roboto,sans-serif;
+    font-family: 'Nunito', sans-serif;
     margin: 0;
     padding: 0;
     background-color: #845EC2;
@@ -14,12 +16,31 @@ body{
     justify-content: center;
 }
 
+
+
+
+
+/* Header */
+
 header {
-    margin-top: -250px;
+    margin-top: -80px;
+    z-index: 2;
 }
 
 header p {
     font-size: 80px;
+    color: white;
+}
+
+
+
+
+
+/* Game Board */
+
+div.announcement {
+    margin-top: -40px;
+    font-size: 36px;
     color: white;
 }
 
@@ -29,7 +50,7 @@ div.container {
     align-items: center;
     justify-content: center;
     max-width: 600px;
-    margin-top: 50px;
+    margin-top: 60px;
 }
 
 div.block {
@@ -73,8 +94,46 @@ div.block:nth-child(7) {
 div.block.selected {
     pointer-events: none;
     color: white;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
     text-shadow: 0 1px 0 #CCCCCC, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b9, 0 5px 0 #aaa, 0 6px 1px rgba(0,0,0,.1), 0 0 5px rgba(0,0,0,.1), 0 1px 3px rgba(0,0,0,.3), 0 3px 5px rgba(0,0,0,.2), 0 5px 10px rgba(0,0,0,.25), 0 10px 10px rgba(0,0,0,.2), 0 20px 20px rgba(0,0,0,.15);
 }
+
+div.block.win {
+    color: red;
+}
+
+div.block.unclickable {
+    pointer-events: none;
+}
+
+button.restartGame {
+    margin: auto 60px 120px auto;
+    font-size: 14px;
+    background-color: #845EC2;
+    text-decoration: none;
+    color: #ffffff;
+    display: inline-block;
+    padding: 10px 26px 10px 26px;
+    position: relative;
+    border: 3px solid #ffffff;
+    border-radius: 20px;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+
+
+
+
+
+/* Footer */
 
 footer {
     background-color: rgba(0, 0, 0, 0.150);
@@ -85,8 +144,14 @@ footer {
     position:absolute;
     bottom:0;
     width:100%;
+    z-index: 2;
 }
 
 footer p {
     font-size: 16px;
+    margin-right: 15px;
+}
+
+path {
+    fill: white;
 }
